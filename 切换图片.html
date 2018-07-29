@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- <script src="./用js实现切换图片.js"></script> -->
+    <style>
+        .content{
+            width: 800px;
+            height: 400px;
+            overflow: hidden;
+        }
+        .content ul{
+            width: 400px;
+            list-style: none;
+
+        }
+        .content ul img{height: 400px;vertical-align: middle;}
+        a{display: block;font-size: 20px;text-decoration: none;height: 40px;padding-left: 80px;margin-top: 50px;}
+    </style>
+</head>
+<body>
+        <a href="">上一张</a>
+   <div class="content">
+      
+    <ul>
+        <li><img src="./img/lif1.jpg" alt=""></li>
+        <li><img src="./img/lyf2.jpg" alt=""></li>
+        <li><img src="./img/lif3.jpg" alt=""></li>
+    </ul>
+   
+   </div>
+   <a href="">下一张</a>
+</body>
+</html>
+<script>
+
+    var srcs = ["./img/lif1.jpg","./img/lyf2.jpg","./img/lif3.jpg"];
+    var imgs = document.getElementsByTagName("img");
+    var as = document.getElementsByTagName("a");
+
+    setInterval(function(){
+        srcs.unshift(srcs.pop())
+    for(var i = 0;i <imgs.length;i++)
+    {
+        imgs[i].src=srcs[i]
+    }
+    return false;
+
+    },5000)
+    // as[0].onclick=function(){
+    //     srcs.unshift(srcs.pop())
+
+    //     for(var i = 0;i <imgs.length;i++)
+    //     {
+    //         imgs[i].src=srcs[i]
+    //     }
+    //     return false;
+    // }
+    // as[1].onclick=function(){
+    //     srcs.push(srcs.shift())
+
+    //     {
+
+    //     }    for(var i = 0;i <imgs.length;i++)
+    //     {
+    //         imgs[i].src=srcs[i]
+    //     }
+    //     return false;
+    // }
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <script>
+   var arr = ["./img/lif1.jpg","./img/lyf2.jpg","./img/lif3.jpg"];
+var imgs = document.getElementsByTagName('img');
+var as = document.getElementsByTagName('a');
+console.log(as);
+console.log(imgs);
+as[0].onclick= function(){
+    arr.unshift(arr.pop());
+    for(var i = 0;i<imgs.length;i++)
+    {
+        imgs[i].src=arr[i]
+    }
+ return false;
+} 
+as[1].onclick=function(){
+    arr.push(arr.shift());
+    for(var i = 0;i<imgs.length;i++)
+    {
+        imgs[i].src=arr[i]
+    }
+    return false;
+}
+</script> -->
